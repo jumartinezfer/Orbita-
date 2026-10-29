@@ -1,0 +1,14 @@
+{
+  "name": "orbita-balance",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev -w backend",
+    "dev:web": "npm run dev -w frontend",
+    "test:api": "npm test -w backend",
+    "test:web": "npm test -w frontend"
+  }
+}
