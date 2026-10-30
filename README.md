@@ -103,12 +103,12 @@ npm run test:web
 
 ## Tiempo dedicado
 
-Aproximadamente 5 horas, siguiendo el plan: diseño y setup (~20 min), API completa con
-idempotencia y webhook (~2h), frontend completo (~1h40), tests de ambos lados (~45 min), pruebas
+Aproximadamente tomó 4 horas, diseño y setup (~20 min), API completa con 
+idempotencia y webhook (~1h), frontend completo (~1h40), tests de ambos lados (~45 min), pruebas
 manuales end-to-end en navegador y README (~25 min).
 
 ## Dónde usé IA
 
-Usé ChatGPT y Gemini como asistente durante toda la implementación: para generar el andamiaje inicial
-de ambos proyectos, escribir la mayoría del código de endpoints/componentes a partir de mis
-decisiones de diseño, y correr las pruebas automatizadas y manuales. Las decisiones de arquitectura (SQLite + centavos enteros, JWT vs. opaco, cómo estructurar la idempotencia, manejo global de 401) las definí yo; la IA ejecutó y verificó la implementación.
+Usé ChatGPT y Gemini como asistente durante la implementación para generar la parte inicial
+de ambos proyectos (Back y Front), escribir la mayoría del código de endpoints/componentes a partir de mis
+decisiones de diseño, y correr las pruebas automatizadas y manuales. Las decisiones de arquitectura (SQLite + centavos enteros, JWT vs. opaco, cómo estructurar la idempotencia, manejo global de 401) las definí yo y la IA ejecutó y verificó la implementación, se usó más que todo como un validador y propulsor de código.
