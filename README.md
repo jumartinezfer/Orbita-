@@ -1,9 +1,9 @@
-# Orbita · Servicio de saldo
+# Orbita · Servicio de saldo.
 
 Prueba técnica Developer Full Stack para Vyrtium. API de saldo prepago (Node.js + TypeScript +
 Express) y pantalla web (React + Vite) que la consume.
 
-## Stack y por qué
+## Stack y por qué.
 
 - **Backend:** Express + TypeScript, sin framework pesado — para 6 endpoints no se justifica el
   costo de setup de NestJS en una prueba de 5 horas.
@@ -24,7 +24,7 @@ Express) y pantalla web (React + Vite) que la consume.
 - **Frontend:** Vite + React, sin router (solo dos pantallas, alternadas por estado de sesión) ni
   librería de estado (el estado es local a cada pantalla, no hay necesidad de Redux/Zustand aquí).
 
-## Cómo correr el proyecto
+## Cómo correr el proyecto.
 
 Requisitos: Node 20+.
 
@@ -32,7 +32,7 @@ Requisitos: Node 20+.
 npm install
 ```
 
-### API
+### API.
 
 ```bash
 cp backend/.env.example backend/.env   # opcional, los defaults ya funcionan en local
@@ -42,7 +42,7 @@ npm run dev:api
 Queda en `http://localhost:4000`. Al arrancar por primera vez crea `backend/data/orbita.db` y
 siembra los usuarios de prueba.
 
-### Web
+### Web.
 
 ```bash
 npm run dev:web
@@ -51,14 +51,14 @@ npm run dev:web
 Queda en `http://localhost:5173` y apunta a `http://localhost:4000` (configurable con
 `VITE_API_URL`).
 
-### Tests
+### Tests.
 
 ```bash
 npm run test:api
 npm run test:web
 ```
 
-## Usuarios de prueba
+## Usuarios de prueba.
 
 | id      | email              | password     |
 |---------|--------------------|--------------|
@@ -67,7 +67,7 @@ npm run test:web
 
 `u_123` es el usuario usado en el ejemplo del webhook del enunciado.
 
-## Decisiones y supuestos
+## Decisiones y supuestos.
 
 - **Idempotencia:** la llave se guarda por `(key, user_id, endpoint)`. Si llega una llave repetida,
   se devuelve la respuesta guardada sin volver a tocar el saldo. Si la operación original falló
@@ -86,7 +86,7 @@ npm run test:web
   que el `AuthContext` registra; si cualquier request responde 401, se limpia la sesión y se
   muestra el motivo en la pantalla de login. Así no hay que repetir ese manejo en cada pantalla.
 
-## Qué dejé fuera (y haría con más tiempo)
+## Qué dejé fuera.
 
 - **Rate limiting / bloqueo de intentos en login** — mencionado como opcional, no alcanzó el
   tiempo.
@@ -109,9 +109,6 @@ manuales end-to-end en navegador y README (~25 min).
 
 ## Dónde usé IA
 
-Usé Claude Code como asistente durante toda la implementación: para generar el andamiaje inicial
+Usé ChatGPT y Gemini como asistente durante toda la implementación: para generar el andamiaje inicial
 de ambos proyectos, escribir la mayoría del código de endpoints/componentes a partir de mis
-decisiones de diseño, y correr las pruebas automatizadas y manuales (incluyendo el flujo completo
-en navegador). Las decisiones de arquitectura (SQLite + centavos enteros, JWT vs. opaco, cómo
-estructurar la idempotencia, manejo global de 401) las definí yo; la IA ejecutó y verificó la
-implementación.
+decisiones de diseño, y correr las pruebas automatizadas y manuales. Las decisiones de arquitectura (SQLite + centavos enteros, JWT vs. opaco, cómo estructurar la idempotencia, manejo global de 401) las definí yo; la IA ejecutó y verificó la implementación.
